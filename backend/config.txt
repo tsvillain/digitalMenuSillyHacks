@@ -1,0 +1,7 @@
+Create new file in the root dir called config.env and the enter all the parameter
+
+DATABASE=
+PORT=
+
+JWT_SECRET=
+JWT_EXPIRES_IN=

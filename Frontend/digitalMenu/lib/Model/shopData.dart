@@ -1,6 +1,7 @@
 import 'menu.dart';
 
 class ShopData {
+  String storeId;
   String shopType;
   List<String> category;
   String shopName;
@@ -8,6 +9,7 @@ class ShopData {
   List<Menu> menuList;
 
   ShopData({
+    this.storeId,
     this.userID,
     this.shopType,
     this.category,
@@ -16,6 +18,7 @@ class ShopData {
   });
 
   ShopData.fromMap(Map<String, dynamic> map) {
+    this.storeId = map["_id"];
     this.userID = map["userID"];
     this.shopType = map["shopType"];
     this.category = List<String>();

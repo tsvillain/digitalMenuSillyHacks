@@ -1,6 +1,5 @@
 import 'package:digitalMenu/Bloc/storeBloc.dart';
 import 'package:digitalMenu/Bloc/storeEvent.dart';
-import 'package:digitalMenu/Model/shopData.dart';
 import 'package:flutter/material.dart';
 
 class CategoryScreen extends StatefulWidget {
@@ -19,6 +18,13 @@ class _CategoryScreenState extends State<CategoryScreen> {
       appBar: AppBar(
         title: Text("Category"),
         centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          widget.storeBloc.eventSink.add(SaveCategory());
+        },
+        label: Text("Save"),
+        icon: Icon(Icons.save),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -82,7 +88,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                 return ListTile(
                                   title: Text(snapshot.data[i]),
                                   trailing: IconButton(
-                                    icon: Icon(Icons.remove_circle_outline),
+                                    icon: Icon(
+                                      Icons.remove_circle_outline,
+                                      color: Colors.red,
+                                    ),
                                     onPressed: () {
                                       widget.storeBloc.eventSink
                                           .add(RemoveCategory(index: i));

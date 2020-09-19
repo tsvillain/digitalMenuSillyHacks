@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     } else if (index == 1) {
       return CategoryScreen(storeBloc: _storeBloc);
     } else if (index == 2) {
-      return AccountScreen();
+      return AccountScreen(storeBloc: _storeBloc);
     }
   }
 
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
                 iconSize: 24,
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 duration: Duration(milliseconds: 800),
-                tabBackgroundColor: Colors.grey[800],
+                tabBackgroundColor: Colors.blue[600],
                 tabs: [
                   GButton(
                     icon: LineIcons.list,

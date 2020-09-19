@@ -1,5 +1,10 @@
+import 'package:digitalMenu/Bloc/storeBloc.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:getwidget/getwidget.dart';
+
+import '../homePage.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -10,8 +15,10 @@ class _LoginScreenState extends State<LoginScreen> {
   final formKey = GlobalKey<FormState>();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passController = TextEditingController();
+  StoreBloc _storeBloc;
   @override
   Widget build(BuildContext context) {
+    _storeBloc = BlocProvider.of<StoreBloc>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("Login"),
@@ -60,7 +67,22 @@ class _LoginScreenState extends State<LoginScreen> {
               Padding(
                 padding: EdgeInsets.all(8),
                 child: GFButton(
-                  onPressed: () {},
+                  onPressed: () async {
+                    if (formKey.currentState.validate()) {
+                      bool value = await _storeBloc.loginUser(
+                        _emailController.text,
+                        _passController.text,
+                      );
+                      if (value) {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      } else {
+                        print("Please Try Again Later");
+                      }
+                    }
+                  },
                   text: "Login",
                   type: GFButtonType.outline2x,
                   shape: GFButtonShape.standard,

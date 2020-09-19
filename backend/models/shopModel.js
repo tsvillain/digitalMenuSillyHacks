@@ -10,7 +10,7 @@ const shopSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	// => ===
+	category: [String],
 	shopStartTime: Date,
 	shopEndTime: Date,
 	shopType: {
@@ -23,7 +23,8 @@ const shopSchema = new mongoose.Schema({
 		{
 			category: String,
 			name: String,
-			price: Number
+			price: Number,
+			show: Boolean
 		}
 	],
 	public: {

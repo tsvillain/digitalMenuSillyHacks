@@ -121,7 +121,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"shopName\": \"Test\",\n\t\"shopStartTime\": 1599735787128,\n\t\"shopEndTime\": 1599735787128,\n\t\"public\": true,\n\t\"shopType\": \"veg & non-veg both\",\n\t\"menu\": [\n\t\t{\n\t\t\t\"category\": \"test\",\n\t\t\t\"name\": \"test\",\n\t\t\t\"price\": 180\n\t\t}\n\t]\n}"
+							"raw": "{\n\t\"shopName\": \"Test\",\n\t\"shopStartTime\": 1599735787128,\n\t\"shopEndTime\": 1599735787128,\n\t\"public\": true,\n\t\"category\": [\"something\"],\n\t\"shopType\": \"veg & non-veg both\",\n\t\"menu\": [\n\t\t{\n\t\t\t\"category\": \"test\",\n\t\t\t\"name\": \"test\",\n\t\t\t\"price\": 180,\n\t\t\t\"show\": true\n\t\t}\n\t]\n}"
 						},
 						"url": {
 							"raw": "{{URL}}/api/v1/shop",

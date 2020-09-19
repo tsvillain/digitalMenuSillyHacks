@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "e1cbc098-f09e-4a4b-96d2-b5f763b9bd94",
+		"name": "Digital Menu Silly Hacks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Suraj Verma\",\n\t\"email\": \"surajverma@gmail.com\",\n\t\"password\": \"thisistest\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/user/signup",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"surajverma@gmail.com\",\n\t\"password\": \"thisistest\"\n}"
+						},
+						"url": {
+							"raw": "https://digitalmenusillyhack.herokuapp.com/api/v1/user/login",
+							"protocol": "https",
+							"host": [
+								"digitalmenusillyhack",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shop",
+			"item": [
+				{
+					"name": "Get All Public Shop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/shop",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create New Shop",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNWEwMGRhZmJlM2ZhM2YxOTRjNDcxYSIsImlhdCI6MTU5OTczNjA3MCwiZXhwIjoxNjA3NTEyMDcwfQ.10lh_Gp4vI9ARiqkDB_O4KdtmNq-NYuJNaVMh0IOkUI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"shopName\": \"Test\",\n\t\"shopStartTime\": 1599735787128,\n\t\"shopEndTime\": 1599735787128,\n\t\"public\": true,\n\t\"shopType\": \"veg & non-veg both\",\n\t\"menu\": [\n\t\t{\n\t\t\t\"category\": \"test\",\n\t\t\t\"name\": \"test\",\n\t\t\t\"price\": 180\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/shop",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"shop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Shop Data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/shop/5f5a099ccec39353b02b4b99",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"shop",
+								"5f5a099ccec39353b02b4b99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Shop",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/shop/5f5a0ae303edb256040750e9",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"shop",
+								"5f5a0ae303edb256040750e9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Shop",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"shopName\": \"UPdate test\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/shop/5f5a0b14addeb0567e6e52bf",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"shop",
+								"5f5a0b14addeb0567e6e52bf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Shop Data By Token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmNWEwMGRhZmJlM2ZhM2YxOTRjNDcxYSIsImlhdCI6MTU5OTczNjk5OCwiZXhwIjoxNjA3NTEyOTk4fQ.4TJQnRBaGxYFt1vCG4K70yc6QVMasOO6vcnYUkLlFtI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/shop/shopByToken",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"shop",
+								"shopByToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,4 +1,5 @@
 import 'package:digitalMenu/Bloc/storeBloc.dart';
+import 'package:digitalMenu/Bloc/storeEvent.dart';
 import 'package:digitalMenu/UI/homePage.dart';
 import 'package:digitalMenu/UI/welcomeScreen.dart';
 import 'package:flutter/material.dart';
@@ -39,6 +40,8 @@ class _CheckLoginState extends State<CheckLogin> {
     super.initState();
   }
 
+  StoreBloc _storeBloc;
+
   checkLogin() async {
     SharedPreferences _preferences = await SharedPreferences.getInstance();
     String token = _preferences.getString("token");
@@ -52,6 +55,7 @@ class _CheckLoginState extends State<CheckLogin> {
             builder: (context) => WelcomeScreen(),
           ));
     } else {
+      _storeBloc.eventSink.add(GetStoreByToken());
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -62,6 +66,7 @@ class _CheckLoginState extends State<CheckLogin> {
 
   @override
   Widget build(BuildContext context) {
+    _storeBloc = BlocProvider.of<StoreBloc>(context);
     return Scaffold(body: Center(child: CircularProgressIndicator()));
   }
 }

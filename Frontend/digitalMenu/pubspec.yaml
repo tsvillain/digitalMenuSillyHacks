@@ -32,6 +32,8 @@ dependencies:
   http: ^0.12.2
   fluttertoast: ^7.1.1
   shared_preferences: ^0.5.10
+  google_nav_bar: ^3.0.0
+  line_icons: ^0.2.0
 
 dev_dependencies:
   flutter_test:

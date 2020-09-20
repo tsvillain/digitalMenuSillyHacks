@@ -4,7 +4,7 @@
 ## [SillyHacks](https://sillyhacks.online/) Hackathon Submission
 
 ## Live Links
-- [📽  Project Demo]()
+- [📽  Project Demo](https://www.youtube.com/watch?v=4U1QoAsKvs4)
 - [💻 Web Platform](https://digitalmenusillyhacks.netlify.app/#/home/5f5a0b14addeb0567e6e52bf)   
 - [💻 Web Server](https://digitalmenusillyhack.herokuapp.com/)   
 - [📱 Mobile App](https://github.com/tsvillain/digitalMenuSillyHacks/tree/master/Frontend)

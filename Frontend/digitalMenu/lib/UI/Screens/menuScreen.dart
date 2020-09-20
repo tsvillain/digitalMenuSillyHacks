@@ -61,28 +61,29 @@ class _MenuScreenState extends State<MenuScreen> {
                                 title: Text("Add Menu Item"),
                                 children: [
                                   StreamBuilder<List<String>>(
-                                      stream: widget.storeBloc.categoryStream,
-                                      initialData: widget.storeBloc.getCategory,
-                                      builder: (context, category) {
-                                        return DropdownButton(
-                                          isExpanded: true,
-                                          items: category.data
-                                              .map(
-                                                (e) => DropdownMenuItem(
-                                                  child: Text(e),
-                                                  value: e,
-                                                ),
-                                              )
-                                              .toList(),
-                                          hint: Text("Select Category"),
-                                          value: selectCategory,
-                                          onChanged: (val) {
-                                            setState(() {
-                                              selectCategory = val;
-                                            });
-                                          },
-                                        );
-                                      }),
+                                    stream: widget.storeBloc.categoryStream,
+                                    initialData: widget.storeBloc.getCategory,
+                                    builder: (context, category) {
+                                      return DropdownButton(
+                                        isExpanded: true,
+                                        items: category.data
+                                            .map(
+                                              (e) => DropdownMenuItem(
+                                                child: Text(e),
+                                                value: e,
+                                              ),
+                                            )
+                                            .toList(),
+                                        hint: Text("Select Category"),
+                                        value: selectCategory,
+                                        onChanged: (val) {
+                                          setState(() {
+                                            selectCategory = val;
+                                          });
+                                        },
+                                      );
+                                    },
+                                  ),
                                   TextFormField(
                                     decoration:
                                         InputDecoration(hintText: "Dish Name"),
@@ -141,10 +142,10 @@ class _MenuScreenState extends State<MenuScreen> {
                         _menuList.add(menu);
                       }
                     }
-                    return snapshot.data.length == 0
+                    return _menuList.length == 0
                         ? Container()
                         : GFAccordion(
-                            title: snapshot.data[i].cateogry,
+                            title: _category[i],
                             contentChild: MenuList(
                               storeBloc: widget.storeBloc,
                               menuList: _menuList,

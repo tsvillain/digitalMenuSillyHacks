@@ -2,8 +2,10 @@ import 'package:digitalMenu/Bloc/storeBloc.dart';
 import 'package:digitalMenu/Model/shopData.dart';
 import 'package:digitalMenu/Model/userData.dart';
 import 'package:digitalMenu/UI/Widget/qrCodeGenerator.dart';
+import 'package:digitalMenu/main.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AccountScreen extends StatefulWidget {
   final StoreBloc storeBloc;
@@ -19,6 +21,17 @@ class _AccountScreenState extends State<AccountScreen> {
       appBar: AppBar(
         title: Text("Account"),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () async {
+              SharedPreferences _pref = await SharedPreferences.getInstance();
+              _pref.setString('token', null);
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => MyApp()));
+            },
+          ),
+        ],
       ),
       body: StreamBuilder<ShopData>(
         stream: widget.storeBloc.storeStream,

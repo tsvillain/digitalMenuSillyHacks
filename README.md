@@ -1,3 +1,4 @@
+
 <h4 align="center">Digital Menu Card</h4>
 
 ## [SillyHacks](https://sillyhacks.online/) Hackathon Submission
@@ -13,6 +14,8 @@
 - Due to COVID, restaurants stayed closed for a long time. Still, people feel insecure in a restaurant, and checking the menu card is one of them.
 - Some restaurants don't have a website to show the hotel menu card, peoples need to call and ask if they want parcel or home delivery.
 - This caused a lot of peoples inconvenience whos are a bachelor or have a habit of getting food from outside on regular basis.
+- The restaurant has a hard copy of the menu card, they cant change the price in the card frequently whenever the price of Ingredient or Vegetables goes up and down.
+- There are also other restaurant management project but they are quiet heavy for client side.
 
 ## How it solves:
 

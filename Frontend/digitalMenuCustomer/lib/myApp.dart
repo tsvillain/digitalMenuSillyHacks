@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       bloc: StoreBloc(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         initialRoute: "/",
         navigatorKey: Modular.navigatorKey,
         onGenerateRoute: Modular.generateRoute,

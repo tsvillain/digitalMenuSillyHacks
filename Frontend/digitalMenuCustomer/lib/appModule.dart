@@ -13,11 +13,10 @@ class AppModule extends MainModule {
   List<ModularRouter> get routers => [
         ModularRouter('/', child: (_, __) => Home()),
         ModularRouter(
-          '/home',
-          child: (_, args) => MenuHome(storeId: args.data),
+          '/home/:storeId',
+          child: (_, args) => MenuHome(storeId: args.params['storeId']),
         ),
       ];
-
   @override
   Widget get bootstrap => MyApp();
 }

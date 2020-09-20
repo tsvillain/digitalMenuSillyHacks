@@ -32,7 +32,7 @@ class QRGenerator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String data = "https://www.google.com/s=" + storeCode;
+    String data = "https://digitalmenusillyhacks.netlify.app/#/home/" + storeCode;
     return Scaffold(
       appBar: AppBar(
         title: Text("QR Code"),
